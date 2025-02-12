@@ -1,0 +1,128 @@
+:root {
+    --color-primario: #3b3b3b;
+    --color-secundario: #3498db;
+}
+#logo {
+    height: 50px;
+}
+
+
+header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+    height: 100vh;
+}
+
+
+
+
+.preview-area {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 80vh;
+}
+
+.sign-preview {
+    border: 1px dashed #ccc;
+    padding: 20px;
+    margin: 10px;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 0;
+}
+
+
+/* Print sheets list */
+
+#preview {
+height: 100%;
+width: 100%;
+}
+
+.poltraid {
+    width: 8.5in;
+    height: 11in;
+}
+
+.landscape {
+    width: 11in;
+    height: 8.5in;
+}
+
+
+.print-sheets {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+}
+
+.one-poltraid {
+    width: 8.5in;
+    height: 11in;
+
+}
+
+.one-landscape {
+    width: 11in;
+    height: 8.5in;
+}
+
+.two-poltraid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.two-landscape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.four-poltraid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.four-landscape {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.six-poltraid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.six-landscape {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.hidden {
+    display: none;
+}
+
+.page {
+    zoom: 0.60;
+}

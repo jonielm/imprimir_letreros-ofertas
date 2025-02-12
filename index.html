@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./src/FAVICON LA INNOVACION-01v2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Generador de Letreros Comerciales</title>
+</head>
+
+<body class="h-full dark:bg-gray-800 dark:text-white">
+    <div class="flex flex-wrap content-start h-full">
+        <header class="w-full h-[10%]">
+            <div class="flex flex-row items-center justify-between">
+                <div class="p-6"><img src="./src/LOGO INNOVACION-03.0.png" alt="logo la innovacion" id="logo"></div>
+                <div class="flex-2"></div>
+                <div class="p-6">
+                    <p>version 1.0 2025</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="w-2/6 h-[80%] p-6 bg-gray-200" id="sidebar">
+            <h2 class="mb-3 text-xl font-">Configuración del Letrero</h2>
+            <div class="form-group mt-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de letrero:</label>
+                <select id="typeOfDiscount"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="none" default>Seleccione un valor</option>
+                    <option value="brand">Marca</option>
+                    <option value="offert">Oferta</option>
+                    <option value="product">Producto</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-6 hidden" id="horientationDiv">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Horientación:</label>
+                <select id="horientation"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="none" default>Seleccione un valor</option>
+                    <option value="landscape">Horizontal</option>
+                    <option value="poltraid">Vertical</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-6 hidden" id="itemsNumberDiv">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cantidad por página:</label>
+                <select id="itemsNumber"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="none" default>Seleccione un valor</option>
+                    <option value="one">1 (Página completa)</option>
+                    <option value="two">2 (Media página)</option>
+                    <option value="four">4 (Cuarto por página)</option>
+                    <option value="six">6 (Seis por página)</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-6 hidden" id="searchDiv">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Buscar en ofertas:</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Buscar por, Nombre o código de oferta" required />
+                    <button id="searchButton"
+                        class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                </div>
+                </form>
+
+            </div>
+
+            <div class="form-group mt-6 hidden" id="brandIconSwitch">
+                <label class="inline-flex items-center mb-5 cursor-pointer">
+                    <input type="checkbox" id="mostrarIconos" class="sr-only peer" checked>
+                    <div class="relative 
+                    w-11 
+                    h-6 
+                    bg-gray-200 
+                    rounded-full 
+                    peer 
+                    dark:bg-gray-700 
+                    peer-checked:after:translate-x-full 
+                    rtl:peer-checked:after:-translate-x-full 
+                    peer-checked:after:border-white 
+                    after:content-[''] 
+                    after:absolute 
+                    after:top-0.5 
+                    after:start-[2px] 
+                    after:bg-white 
+                    after:border-gray-300 
+                    after:border 
+                    after:rounded-full 
+                    after:h-5 
+                    after:w-5 
+                    after:transition-all 
+                    dark:border-gray-600 
+                    peer-checked:bg-blue-300 
+                    dark:peer-checked:bg-blue-600"></div>
+                    <span class="ms-3 text-sm font-medium text-gray-400 dark:text-gray-500">Mostrar marcas</span>
+                </label>
+            </div>
+
+            <div class="form-group mt-6 hidden" id="colorSelector">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Color de fondo:</label>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-8 w-8 rounded-full shadow" style="background: #ffffff" data-color="#ffffff"></div>
+                    <div class="h-8 w-8 rounded-full shadow" style="background: #ffeb3b" data-color="#ffeb3b"></div>
+                    <div class="h-8 w-8 rounded-full shadow" style="background: #ff5722" data-color="#ff5722"></div>
+                    <div class="relative h-8 w-8">
+                        <div
+                            class="absolute inset-0 rounded-full shadow bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500">
+                        </div>
+                        <input type="color" id="colorPersonalizado" class="absolute inset-0 h-full w-full opacity-0 cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-6 hidden" id="toolsButtonsDiv">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Acciones:</label>
+                <div class="flex items-center justify-center gap-4">
+                    <button onclick="previsualizer()"
+                        class="leading-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm p-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                    <button onclick="print()"
+                        class="leading-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm p-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <span class="material-symbols-outlined">print</span>
+                    </button>
+                    <button onclick="restart()"
+                        class="leading-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm p-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <span class="material-symbols-outlined">refresh</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grow h-3/4 relative" id="previewContainer">
+            <div class="sign-preview justify-center items-center flex" id="preview">
+            </div>
+            <div
+                class="form-group mt-10 text-blue-400 text-xl flex absolute bottom-0 left-0 p-6 justify-between w-full">
+                <button onclick="fowardPage()">
+                    <span class="material-symbols-outlined">arrow_circle_left</span>
+                </button>
+                <span class="text-sm text-gray-700" id="paginaActual">Página 1</span>
+                <button onclick="nextPage()">
+                    <span class="material-symbols-outlined">arrow_circle_right</span>
+                </button>
+            </div>
+        </div>
+        <footer class="fixed bottom-0 w-full text-center items-center h-[10%]">
+            <p>® Todos los derechos reservados 2025 por Joniel Martínez</p>
+        </footer>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
