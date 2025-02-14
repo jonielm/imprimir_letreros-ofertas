@@ -1,4 +1,27 @@
-import { offertsData } from './tempData.js';
+// import { offertsData } from './tempData.js';
+let offertsData = [];
+const options = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  }
+};
+
+fetch("http://192.168.1.132:8053/api/OfertaDescuento/Lista", options)
+  .then(res => {
+    let offertsData = [];
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then(response => {
+    offertsData = response;
+    console.log('Respuesta:', offertsData);
+  })
+  .catch(error => {
+    console.error('Error en la petición:', error);
+  });
 
 const typeOfDiscount = document.getElementById('typeOfDiscount');
 
@@ -227,7 +250,7 @@ function addSelectedProductsToPage(offer) {
       
       let image = document.createElement('img');
       image.src = `./src/${product.marcaCodigo}`;
-      image.classList.add('w-full', 'h-32', 'object-cover', 'mt-2');
+      image.classList.add('w-full', 'h-[15%]', 'object-cover', 'mt-2');
 
       
       let validityDiv = document.createElement('div');
