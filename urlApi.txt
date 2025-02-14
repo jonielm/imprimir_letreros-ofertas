@@ -1,0 +1,2 @@
+http://192.168.1.132:8053/api/OfertaDescuento/Lista
+
